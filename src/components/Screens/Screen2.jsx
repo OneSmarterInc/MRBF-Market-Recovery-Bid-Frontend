@@ -21,54 +21,129 @@ const Screen2 = () => {
         {/* Content */}
         <div className="p-6 px-10 pr-20">
           <div className="bg-white p-6  rounded-lg">
-            <div className="grid grid-cols-2 gap-2">
-              <div className="grid grid-cols-2 gap-6 mt-4">
-                <div>
-                  <h2 className="font-semibold text-gray-700">
-                    Company Overview
-                  </h2>{" "}
-                  <div className="mt-1">
-                    <img src={arrow} alt="Logo" className="w-16 h-3" />
-                  </div>
-                  <a href="#" className="text-[#008CD0] font-medium ">
-                    Hutton Construction, LLC
-                  </a>
-                  <p className="text-gray-600 text-sm">example@mrbm.com</p>
-                  <p className="text-gray-600 text-sm">+1-555-987-6543</p>
+            <div className=" pt-4">
+              <p className="font-semibold text-gray-700">
+                BID NUMBER: <span className="text-[#008CD0]">0000011</span>
+              </p>
+              <div className="grid grid-cols-4 gap-4 text-gray-600 mt-2">
+                <p>
+                  Employer <p className="text-[#008CD0] font-medium">8137</p>
+                </p>
+                <p>
+                  Group <p className="text-[#008CD0] font-medium">65</p>
+                </p>
+                <p>
+                  Local <p className="text-[#008CD0] font-medium">0472</p>
+                </p>
+                <p>
+                  Business Agent{" "}
+                  <p className="text-[#008CD0] font-medium">LG</p>
+                </p>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 place-content-between gap-2 mt-20">
+              <div>
+                <h2 className="font-semibold text-gray-700">Company Info</h2>{" "}
+                <div className="mt-1">
+                  <img src={arrow} alt="Logo" className="w-16 h-3" />
                 </div>
-
-                <div>
-                  <h2 className="font-semibold text-gray-700">
-                    Bid Contact Info
-                  </h2>{" "}
-                  <div className="mt-1">
-                    <img src={arrow} alt="Logo" className="w-16 h-3" />
-                  </div>
-                  <a href="#" className="text-[#008CD0] font-medium ">
-                    Reccia
-                  </a>
-                  <p className="text-gray-600 text-sm">reccia@mrbm.com</p>
-                  <p className="text-gray-600 text-sm">+1-973-857-2501</p>
+                <p className="text-[#008CD0] font-medium  p-1 ">
+                  <span className=" text-gray-600">Company Name:</span> Hutton
+                  Construction, LLC
+                </p>
+                {/* <p className="text-gray-600 text-sm"> example@mrbm.com</p> */}
+                <p className="text-gray-600 text-sm p-1">
+                  {" "}
+                  <span className=" text-gray-600 font-medium">
+                    Phone No.:
+                  </span>{" "}
+                  +1-555-987-6543
+                </p>
+                <p className="text-gray-600 text-sm  p-1">
+                  {" "}
+                  <span className=" text-gray-600 font-medium">
+                    Address
+                  </span>{" "}
+                  New Street, NY
+                </p>
+                <div className="flex gap-4  p-1">
+                  <p className="text-gray-600 text-sm">
+                    <span className=" text-gray-600 font-medium">City:</span>{" "}
+                    New York
+                  </p>
+                  <p className="text-gray-600 text-sm">
+                    {" "}
+                    <span className=" text-gray-600 font-medium">
+                      State:
+                    </span>{" "}
+                    NY
+                  </p>
+                  <p className="text-gray-600 text-sm">
+                    {" "}
+                    <span className=" text-gray-600 font-medium">
+                      Zip:
+                    </span>{" "}
+                    4444
+                  </p>
                 </div>
               </div>
 
-              <div className=" pt-4">
-                <p className="font-semibold text-gray-700">
-                  BID NUMBER: <span className="text-[#008CD0]">0000011</span>
+              <div>
+                <h2 className="font-semibold text-gray-700">
+                  Bid Contact Info
+                </h2>{" "}
+                <div className="mt-1">
+                  <img src={arrow} alt="Logo" className="w-16 h-3" />
+                </div>
+                <p className="text-[#008CD0] font-medium  p-1 ">
+                  <span className=" text-gray-600">Contact Name:</span> Rececia
                 </p>
-                <div className="grid grid-cols-4 gap-4 text-gray-600 mt-2">
-                  <p>
-                    Employer <p className="text-[#008CD0] font-medium">8137</p>
+                <p className="text-gray-600 text-sm p-1">
+                  {" "}
+                  <span className=" text-gray-600 font-medium">
+                    Email:
+                  </span>{" "}
+                  example@mrbm.com
+                </p>
+                <p className="text-gray-600 text-sm p-1">
+                  {" "}
+                  <span className=" text-gray-600 font-medium">
+                    Phone No.:
+                  </span>{" "}
+                  +1-555-987-6543
+                </p>
+                <p className="text-gray-600 text-sm p-1">
+                  {" "}
+                  <span className=" text-gray-600 font-medium">
+                    Project Name.:
+                  </span>{" "}
+                  XYZ P
+                </p>
+                <p className="text-gray-600 text-sm  p-1">
+                  {" "}
+                  <span className=" text-gray-600 font-medium">
+                    Project Address
+                  </span>{" "}
+                  New Street, NY
+                </p>
+                <div className="flex gap-4  p-1">
+                  <p className="text-gray-600 text-sm">
+                    <span className=" text-gray-600 font-medium">City:</span>{" "}
+                    New York
                   </p>
-                  <p>
-                    Group <p className="text-[#008CD0] font-medium">65</p>
+                  <p className="text-gray-600 text-sm">
+                    {" "}
+                    <span className=" text-gray-600 font-medium">
+                      State:
+                    </span>{" "}
+                    NY
                   </p>
-                  <p>
-                    Local <p className="text-[#008CD0] font-medium">0472</p>
-                  </p>
-                  <p>
-                    Business Agent{" "}
-                    <p className="text-[#008CD0] font-medium">LG</p>
+                  <p className="text-gray-600 text-sm">
+                    {" "}
+                    <span className=" text-gray-600 font-medium">
+                      Zip:
+                    </span>{" "}
+                    4444
                   </p>
                 </div>
               </div>

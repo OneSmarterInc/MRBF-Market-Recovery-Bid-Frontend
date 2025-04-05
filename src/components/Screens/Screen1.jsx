@@ -35,11 +35,14 @@ const Screen1 = () => {
               <table className="w-full border-collapse border border-gray-200">
                 <thead>
                   <tr className="text-[#008CBA] text-start">
-                    <th className="border border-gray-200 px-4 py-2 border-r-[#008CBA] text-start">
+                    <th className="border border-gray-200 px-4 py-2 text-start">
                       Bid No.
                     </th>
+                    <th className="border border-gray-200 px-4 py-2  text-start">
+                      Employer
+                    </th>
                     <th className="border border-gray-200 px-4 py-2 text-start">
-                      Employer Name
+                      Project Name
                     </th>
                     <th className="border border-gray-200 px-4 py-2 text-start">
                       Approved Amount
@@ -55,8 +58,9 @@ const Screen1 = () => {
                       key={index}
                       className="text-start border border-gray-200"
                     >
-                      <td className="border border-gray-200 text-[#008CBA] border-r-[#008CBA] px-4 py-2">
-                        11 8137
+                      <td className="border border-gray-200  px-4 py-2">11</td>
+                      <td className="border border-gray-200  px-4 py-2">
+                        1137
                       </td>
                       <td className="border border-gray-200 px-4 py-2">
                         Hutton Construction, LLC
@@ -71,6 +75,11 @@ const Screen1 = () => {
                   ))}
                 </tbody>
               </table>
+            </div>
+            <div className="w-full flex justify-end mt-10">
+              <button className=" bg-[#008CBA] p-2 rounded-full text-white py-1 px-4 cursor-pointer ">
+                Create BID
+              </button>
             </div>
           </main>
 

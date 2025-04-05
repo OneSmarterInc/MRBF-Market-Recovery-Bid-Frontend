@@ -28,7 +28,7 @@ const Screen3 = () => {
         <div className="p-6 px-10 pr-20">
           <div className="bg-white p-6  rounded-lg">
             <div className="grid grid-cols-2 gap-2">
-              <div className="grid grid-cols-2 gap-6 mt-4">
+              <div className="grid grid-cols-2 gap-6 ">
                 <div>
                   <h2 className="font-semibold text-gray-700">
                     Company Overview
@@ -58,7 +58,7 @@ const Screen3 = () => {
                 </div>
               </div>
 
-              <div className=" pt-4">
+              <div className=" ">
                 <p className="font-semibold text-gray-700">
                   BID NUMBER: <span className="text-[#008CD0]">0000011</span>
                 </p>
@@ -84,7 +84,7 @@ const Screen3 = () => {
               <FaArrowLeft className="mr-2" /> BACK
             </button> */}
 
-            <div className="mt-10">
+            <div className="mt-5">
               <img
                 onClick={() => navigate("/screen2")}
                 src={backbtn}
@@ -93,7 +93,7 @@ const Screen3 = () => {
               />
             </div>
 
-            <div className="mt-6 flex gap-10 text-gray-600 text-sm">
+            <div className="mt-5 flex gap-10 text-gray-600 text-sm">
               <p className=" font-semibold">
                 App Date: 07/13/20233{" "}
                 <p className="text-[#008CD0] text-xs text-end pl-10 font-light">
@@ -128,7 +128,7 @@ const Screen3 = () => {
 
             <div className="flex">
               <div className="w-96">
-                <div className="mt-6 flex items-center text-green-600 font-medium text-lg">
+                <div className="mt-4 flex items-center text-green-600 font-medium text-lg">
                   <FaRegCheckCircle className="text-2xl" />
                   <span className="ml-2 text-base">Approved</span>
                 </div>
@@ -145,7 +145,7 @@ const Screen3 = () => {
                       <select
                         id="reductionAmount"
                         name="reductionAmount"
-                        className="appearance-none w-full border border-gray-400 rounded px-2 py-1"
+                        className="appearance-none w-full border border-gray-400 rounded px-2 py-0.5 text-sm"
                         defaultValue="0"
                       >
                         {reductionOptions.map((value) => (
@@ -166,7 +166,7 @@ const Screen3 = () => {
                   <p>Remaining Amount: 0.00</p>
                 </div>
               </div>
-              <div className="mt-6 pt-4 w-full">
+              <div className="mt-5 w-full">
                 <h2 className="text-[#008CD0] font-medium text-sm">
                   Remark / Comments (If Any)
                 </h2>

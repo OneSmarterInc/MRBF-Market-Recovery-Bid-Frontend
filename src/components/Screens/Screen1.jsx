@@ -6,6 +6,7 @@ import {
   FaExternalLinkAlt,
   FaSync,
   FaRegCheckCircle,
+  FaPlus,
 } from "react-icons/fa";
 import selectbtn from "../../assets/select.png";
 import arrow from "../../assets/arrow.png";
@@ -15,12 +16,54 @@ import { useNavigate } from "react-router-dom";
 const Screen1 = () => {
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
+  const [tableData, setTableData] = useState([
+    {
+      bidNo: "11",
+      employer: "1137",
+      projectName: "Hutton Construction, LLC",
+      approvedAmount: "105,000.00",
+      estimatedHours: "10,500",
+    },
+    {
+      bidNo: "12",
+      employer: "1137",
+      projectName: "ABC Construction Co.",
+      approvedAmount: "85,000.00",
+      estimatedHours: "8,500",
+    },
+  ]);
+  const [newRecord, setNewRecord] = useState({
+    bidNo: "",
+    employer: "",
+    projectName: "",
+    approvedAmount: "",
+    estimatedHours: "",
+  });
 
   const flag = () => {
     setShow(true);
   };
 
-  useEffect(() => {}, [show]);
+  const handleAddRecord = () => {
+    if (newRecord.bidNo && newRecord.projectName) {
+      setTableData([...tableData, newRecord]);
+      setNewRecord({
+        bidNo: "",
+        employer: "",
+        projectName: "",
+        approvedAmount: "",
+        estimatedHours: "",
+      });
+    }
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setNewRecord((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
 
   return (
     <div className="flex h-screen bg-[#F8FCFF]">
@@ -30,98 +73,140 @@ const Screen1 = () => {
         <Navbar />
 
         <div className="p-6 px-10 pr-20">
-          <main className="flex-1 p-6 bg-white ">
-            <div className="flex flex-row justify-center gap-8">
-              <div className="mt-4 flex flex-col space-x-8 justify-center">
-                <div className="text-gray-700 flex flex-row gap-4">
-                  <p className="font-semibold">Employer</p>
-                  <input
-                    type="text"
-                    placeholder="08137"
-                  
-                    className="text-sx w-46 text-gray-400 border rounded-sm border-gray-500 focus:border-[#008CBA] focus:outline-none transition duration-200"
-                  ></input>
-                </div>
-                <div className="text-gray-700 flex flex-row gap-4 mt-4">
-                  <p className="font-semibold">Group</p>
-                  <input
-                    type="text"
-                    placeholder="00065"
-
-                    className="text-sx w-46 ml-6 text-gray-400 border rounded-sm border-gray-500 focus:border-[#008CBA] focus:outline-none transition duration-200"
-                  ></input>
-                </div>
+          <main className="flex-1 p-6 pt-0 bg-white ">
+            <div className="mt-4 flex items-end gap-10 ">
+              <div className="text-gray-700  gap-4">
+                <p className="font-semibold my-0.5 text-sm">Employer</p>
+                <input
+                  type="text"
+                  placeholder="08137"
+                  className="text-sx w-46 text-gray-400 border rounded-sm border-gray-500 focus:border-[#008CBA] focus:outline-none transition duration-200 px-2"
+                ></input>
               </div>
-              <div className="flex gap-4">
+              <div className="text-gray-700  gap-4 ">
+                <p className="font-semibold my-0.5 text-sm">Group</p>
+                <input
+                  type="text"
+                  placeholder="00065"
+                  className="text-sx w-46  text-gray-400 border rounded-sm border-gray-500 focus:border-[#008CBA] focus:outline-none transition duration-200 px-2"
+                ></input>
+              </div>
+              <div className="flex gap-4 ">
                 <button
-                  className=" p-2 w-24 h-10 mt-8 text-[#008CBA]  border text-gray rounded-lg"
-                  onClick={() => {
-                    flag();
-                  }}
+                  className="p-2 py-0.5 hover:bg-[#008CBA] hover:text-gray-50 cursor-pointer w-24  text-[#008CBA]  border text-gray rounded-lg"
+                  onClick={flag}
                 >
                   Submit
                 </button>
-                {show ? (
-                  <FaSync
-                    className="mt-4"
-                    onClick={() => {
-                      setShow(false);
-                    }}
-                  />
-                ) : (
-                  ""
-                )}
               </div>
             </div>
 
             {show ? (
-              <div className="mt-6 overflow-x-auto">
-                <table className="w-full border-collapse border border-gray-200">
-                  <thead>
-                    <tr className="text-[#008CBA] text-start">
-                      <th className="border border-gray-200 px-4 py-2 text-start">
-                        Bid No.
-                      </th>
-                      <th className="border border-gray-200 px-4 py-2  text-start">
-                        Employer
-                      </th>
-                      <th className="border border-gray-200 px-4 py-2 text-start">
-                        Project Name
-                      </th>
-                      <th className="border border-gray-200 px-4 py-2 text-start">
-                        Approved Amount
-                      </th>
-                      <th className="border border-gray-200 px-4 py-2 text-start">
-                        Estimated Hours
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {[...Array(3)].map((_, index) => (
-                      <tr
-                        key={index}
-                        onClick={() => navigate("/screen2")}
-                        className="text-start border border-gray-200 cursor-pointer hover:bg-gray-100"
-                      >
-                        <td className="border border-gray-200  px-4 py-2">
-                          11
-                        </td>
-                        <td className="border border-gray-200  px-4 py-2">
-                          1137
-                        </td>
-                        <td className="border border-gray-200 px-4 py-2">
-                          Hutton Construction, LLC
-                        </td>
-                        <td className="border border-gray-200 px-4 py-2">
-                          105,000.00
-                        </td>
-                        <td className="border border-gray-200 px-4 py-2">
-                          10,500
-                        </td>
+              <div className="mt-4">
+                {/* add new recoord */}
+                <div className="mb-4 p-2 border border-gray-200 rounded-lg">
+                  <h3 className="text-[#008CBA] mb-2 text-sm">
+                    Add New Record
+                  </h3>
+                  <div className="grid grid-cols-6 gap-2">
+                    <input
+                      type="text"
+                      name="bidNo"
+                      placeholder="Bid No."
+                      value={newRecord.bidNo}
+                      onChange={handleInputChange}
+                      className="border text-sm rounded-sm py-1 px-2 h-7"
+                    />
+                    <input
+                      type="text"
+                      name="employer"
+                      placeholder="Employer"
+                      value={newRecord.employer}
+                      onChange={handleInputChange}
+                      className="border text-sm rounded-sm py-1 px-2 h-7"
+                    />
+                    <input
+                      type="text"
+                      name="projectName"
+                      placeholder="Project Name"
+                      value={newRecord.projectName}
+                      onChange={handleInputChange}
+                      className="border text-sm rounded-sm py-1 px-2 h-7"
+                    />
+                    <input
+                      type="text"
+                      name="approvedAmount"
+                      placeholder="Approved Amount"
+                      value={newRecord.approvedAmount}
+                      onChange={handleInputChange}
+                      className="border text-sm rounded-sm py-1 px-2 h-7"
+                    />
+                    <input
+                      type="text"
+                      name="estimatedHours"
+                      placeholder="Estimated Hours"
+                      value={newRecord.estimatedHours}
+                      onChange={handleInputChange}
+                      className="border text-sm rounded-sm py-1 px-2 h-7"
+                    />
+                    <button
+                      onClick={handleAddRecord}
+                      className="bg-[#008CBA] text-white p-0.5 cursor-pointer justify-center px-3 rounded flex items-center gap-1"
+                    >
+                      <FaPlus size={12} /> Add Record
+                    </button>
+                  </div>
+                </div>
+
+                {/* Table */}
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse border border-gray-200">
+                    <thead>
+                      <tr className="text-[#008CBA] text-start">
+                        <th className="border border-gray-200 px-4 py-2 text-start">
+                          Bid No.
+                        </th>
+                        <th className="border border-gray-200 px-4 py-2  text-start">
+                          Employer
+                        </th>
+                        <th className="border border-gray-200 px-4 py-2 text-start">
+                          Project Name
+                        </th>
+                        <th className="border border-gray-200 px-4 py-2 text-start">
+                          Approved Amount
+                        </th>
+                        <th className="border border-gray-200 px-4 py-2 text-start">
+                          Estimated Hours
+                        </th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      {tableData.map((row, index) => (
+                        <tr
+                          key={index}
+                          onClick={() => navigate("/screen2")}
+                          className="text-start border border-gray-200 cursor-pointer hover:bg-gray-100"
+                        >
+                          <td className="border border-gray-200 px-4 py-2">
+                            {row.bidNo}
+                          </td>
+                          <td className="border border-gray-200 px-4 py-2">
+                            {row.employer}
+                          </td>
+                          <td className="border border-gray-200 px-4 py-2">
+                            {row.projectName}
+                          </td>
+                          <td className="border border-gray-200 px-4 py-2">
+                            {row.approvedAmount}
+                          </td>
+                          <td className="border border-gray-200 px-4 py-2">
+                            {row.estimatedHours}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             ) : (
               <p className="flex justify-center mt-4 text-gray-500"></p>

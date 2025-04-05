@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../assets/image 2.png";
+import Logo from "../assets/newlogo.png";
 import sidebar from "../assets/left.png";
 import { useLocation, useNavigate } from "react-router-dom";
 

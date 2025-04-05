@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Sidebar from "../Sidebar";
 import Navbar from "../Navbar";
 import {
@@ -17,6 +17,9 @@ const reductionOptions = [0, 10, 20, 30];
 
 const Screen3 = () => {
   const navigate = useNavigate();
+  const [remarks, setremarks] = useState(
+    "Lorem ipsum dolor, sit amet consectetur adipisicing elit  Velit, enim dolore quasi eum cum ex numquam rem suscipit arum laudantium eos distinctio voluptatem quod rerum vel illum tenetur quo libero?"
+  );
   return (
     <div className="flex h-screen bg-[#F8FCFF]">
       <Sidebar />
@@ -39,7 +42,7 @@ const Screen3 = () => {
                   <a href="#" className="text-[#008CD0] font-medium ">
                     Hutton Construction, LLC
                   </a>
-                  <p className="text-gray-600 text-sm">example@mrbm.com</p>
+                  {/* <p className="text-gray-600 text-sm">example@mrbm.com</p> */}
                   <p className="text-gray-600 text-sm">+1-555-987-6543</p>
                 </div>
 
@@ -53,7 +56,7 @@ const Screen3 = () => {
                   <a href="#" className="text-[#008CD0] font-medium ">
                     Reccia
                   </a>
-                  <p className="text-gray-600 text-sm">reccia@mrbm.com</p>
+                  {/* <p className="text-gray-600 text-sm">reccia@mrbm.com</p> */}
                   <p className="text-gray-600 text-sm">+1-973-857-2501</p>
                 </div>
               </div>
@@ -84,68 +87,69 @@ const Screen3 = () => {
               <FaArrowLeft className="mr-2" /> BACK
             </button> */}
 
-            <div className="mt-5">
-              <img
-                onClick={() => navigate("/screen2")}
-                src={backbtn}
-                alt="Logo"
-                className="w-28 h-7 cursor-pointer"
-              />
-            </div>
-
             <div className="mt-5 flex gap-10 text-gray-600 text-sm">
               <p className=" font-semibold">
-                App Date: 07/13/20233{" "}
+                App Date: 07/13/2023{" "}
                 <p className="text-[#008CD0] text-xs text-end pl-10 font-light">
-                  MM/DD/YY
+                  MM/DD/YYYY
                 </p>
               </p>
               <p className=" font-semibold">
-                <span className=" text-red-500">Bid Date:</span> 08/04/20233{" "}
+                <span className=" text-red-500">Bid Date:</span> 08/04/2023{" "}
                 <p className="text-[#008CD0] text-xs text-end pl-10 font-light">
-                  MM/DD/YY
+                  MM/DD/YYYY
                 </p>
               </p>
               <p className=" font-semibold">
-                Agreement Date: 08/04/20233{" "}
+                Agreement Date: 08/04/2023{" "}
                 <p className="text-[#008CD0] text-xs text-end pl-10 font-light">
-                  MM/DD/YY
+                  MM/DD/YYYY
                 </p>
               </p>
               <p className=" font-semibold">
-                Response Date: 08/04/20233{" "}
+                Response Date: 08/04/2023{" "}
                 <p className="text-[#008CD0] text-xs text-end pl-10 font-light">
-                  MM/DD/YY
+                  MM/DD/YYYY
                 </p>
               </p>
               <p className=" font-semibold">
-                Exp Date: 10/13/20233{" "}
+                Exp Date: 10/13/2023{" "}
                 <p className="text-[#008CD0] text-xs text-end pl-10 font-light">
-                  MM/DD/YY
+                  MM/DD/YYYY
                 </p>
               </p>
             </div>
 
-            <div className="flex">
+            <div className="flex w-full">
               <div className="w-96">
                 <div className="mt-4 flex items-center text-green-600 font-medium text-lg">
                   <FaRegCheckCircle className="text-2xl" />
                   <span className="ml-2 text-base">Approved</span>
                 </div>
 
-                <div className="mt-4 text-gray-600 font-medium text-sm">
-                  <p>Estimated Hours: 10,500</p>
-                  <p>Awarded Amount: 105,000.00</p>
+                <div className=" bg-white  p-4 px-8 max-w-sm mx-auto">
+                  <p className="text-gray-700 text-sm mb-2 flex justify-between">
+                    <span className="font-medium">Estimated Hours:</span>
+                    <span className="text-gray-600">10,500</span>
+                  </p>
+                  <p className="text-gray-700 text-sm mb-2 flex justify-between">
+                    <span className="font-medium">Awarded Amount:</span>
+                    <span className="text-gray-600">105,000.00</span>
+                  </p>
 
                   {/* Dropdown for Reduction Amount */}
-                  <div className="flex items-center space-x-2 relative w-40">
-                    <label htmlFor="reductionAmount">Reduction Amount:</label>
-
-                    <div className="relative w-full">
+                  <div className="flex items-center justify-between space-x-2 mb-2">
+                    <label
+                      htmlFor="reductionAmount"
+                      className="text-sm font-medium  text-gray-700"
+                    >
+                      Reduction Amount:
+                    </label>
+                    <div className="relative ">
                       <select
                         id="reductionAmount"
                         name="reductionAmount"
-                        className="appearance-none w-full border border-gray-400 rounded px-2 py-0.5 text-sm"
+                        className="appearance-none w-full border border-gray-300 rounded-lg py-1 pl-3 pr-8 text-xs focus:ring-2 focus:ring-blue-400"
                         defaultValue="0"
                       >
                         {reductionOptions.map((value) => (
@@ -154,34 +158,51 @@ const Screen3 = () => {
                           </option>
                         ))}
                       </select>
-
                       {/* Custom Arrow Icon */}
-                      <div className="pointer-events-none absolute top-1/2 right-2 transform -translate-y-1/2 text-gray-600">
+                      <div className="pointer-events-none absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-600">
                         <FiChevronDown />
                       </div>
                     </div>
                   </div>
 
-                  <p>Amount Used: 0.00</p>
-                  <p>Remaining Amount: 0.00</p>
+                  <p className="text-gray-700 text-sm mb-2 flex justify-between">
+                    <span className="font-medium">Amount Used:</span>
+                    <span className="text-gray-600">0.00</span>
+                  </p>
+                  <p className="text-gray-700 text-sm mb-2 flex justify-between">
+                    <span className="font-medium">Remaining Amount:</span>
+                    <span className="text-gray-600">0.00</span>
+                  </p>
                 </div>
               </div>
               <div className="mt-5 w-full">
                 <h2 className="text-[#008CD0] font-medium text-sm">
                   Remark / Comments (If Any)
                 </h2>
-                <div className="flex items-start mt-2 text-gray-600 text-sm">
-                  <div className="mt-1">
-                    <img src={img1} alt="Logo" className="w-16 h-10" />
+                <div className="flex items-start  mt-2 text-gray-600 text-sm">
+                  <div className="mt-1 ">
+                    <img src={img1} alt="Logo" className="w-12 h-10" />
                   </div>
-                  <p className="mx-2">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Velit, enim dolore quasi eum cum ex numquam rem suscipit
-                    harum laudantium eos distinctio voluptatem quod rerum vel
-                    illum tenetur quo libero?
+                  <p className="mx-2 w-full">
+                    <textarea
+                      name=""
+                      rows={3}
+                      value={remarks}
+                      onChange={(e) => setremarks(e.target.value)}
+                      id=""
+                      className="w-full border border-gray-200 p-1"
+                    ></textarea>{" "}
                   </p>
                 </div>
               </div>
+            </div>
+            <div className="mt-5">
+              <img
+                onClick={() => navigate("/screen2")}
+                src={backbtn}
+                alt="Logo"
+                className="w-28 h-7 cursor-pointer"
+              />
             </div>
           </div>
 

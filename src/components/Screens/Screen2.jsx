@@ -108,7 +108,7 @@ const Screen2 = () => {
 
   return (
     <div className="flex h-screen bg-[#F8FCFF]">
-      <Sidebar />
+      {/* <Sidebar /> */}
 
       <div className="flex flex-col flex-1">
         <Navbar />

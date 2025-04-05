@@ -6,10 +6,14 @@ import {
   FaExternalLinkAlt,
   FaRegCheckCircle,
 } from "react-icons/fa";
+
+import { FiChevronDown } from "react-icons/fi";
 import backbtn from "../../assets/backbutton.png";
 import arrow from "../../assets/arrow.png";
 import img1 from "../../assets/img1.png";
 import { useNavigate } from "react-router-dom";
+
+const reductionOptions = [0, 10, 20, 30];
 
 const Screen3 = () => {
   const navigate = useNavigate();
@@ -91,13 +95,19 @@ const Screen3 = () => {
 
             <div className="mt-6 flex gap-10 text-gray-600 text-sm">
               <p className=" font-semibold">
-                Date: 07/13/20233{" "}
+                App Date: 07/13/20233{" "}
                 <p className="text-[#008CD0] text-xs text-end pl-10 font-light">
                   MM/DD/YY
                 </p>
               </p>
               <p className=" font-semibold">
-                Bid Date: 08/04/20233{" "}
+                <span className=" text-red-500">Bid Date:</span> 08/04/20233{" "}
+                <p className="text-[#008CD0] text-xs text-end pl-10 font-light">
+                  MM/DD/YY
+                </p>
+              </p>
+              <p className=" font-semibold">
+                Agreement Date: 08/04/20233{" "}
                 <p className="text-[#008CD0] text-xs text-end pl-10 font-light">
                   MM/DD/YY
                 </p>
@@ -125,8 +135,33 @@ const Screen3 = () => {
 
                 <div className="mt-4 text-gray-600 font-medium text-sm">
                   <p>Estimated Hours: 10,500</p>
-                  <p>Approved Amount: 105,000.00</p>
-                  <p>Reduction Amount: 0.00</p>
+                  <p>Awarded Amount: 105,000.00</p>
+
+                  {/* Dropdown for Reduction Amount */}
+                  <div className="flex items-center space-x-2 relative w-40">
+                    <label htmlFor="reductionAmount">Reduction Amount:</label>
+
+                    <div className="relative w-full">
+                      <select
+                        id="reductionAmount"
+                        name="reductionAmount"
+                        className="appearance-none w-full border border-gray-400 rounded px-2 py-1"
+                        defaultValue="0"
+                      >
+                        {reductionOptions.map((value) => (
+                          <option key={value} value={value}>
+                            {value === 0 ? ".00" : value}
+                          </option>
+                        ))}
+                      </select>
+
+                      {/* Custom Arrow Icon */}
+                      <div className="pointer-events-none absolute top-1/2 right-2 transform -translate-y-1/2 text-gray-600">
+                        <FiChevronDown />
+                      </div>
+                    </div>
+                  </div>
+
                   <p>Amount Used: 0.00</p>
                   <p>Remaining Amount: 0.00</p>
                 </div>

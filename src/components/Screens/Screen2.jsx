@@ -24,7 +24,7 @@ const Screen2 = () => {
         <div className="p-6 px-10 pr-20">
           <div className="bg-white p-6  rounded-lg">
             <div className=" pt-4">
-              <p className="font-semibold text-gray-700">
+              <p className="font-semibold text-gray-700 text-center">
                 BID NUMBER: <span className="text-[#008CD0]">0000011</span>
               </p>
               <div className="grid grid-cols-4 gap-4 text-gray-600 mt-2">
@@ -155,7 +155,7 @@ const Screen2 = () => {
               <FaArrowLeft className="mr-2" /> BACK
             </button> */}
 
-            <div className="mt-10 w-full flex justify-end">
+            <div className="mt-10 w-full flex justify-end cursor-pointer">
               <img
                 onClick={() => navigate("/screen3")}
                 src={selectbtn}

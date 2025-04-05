@@ -20,11 +20,11 @@ const App = () => {
         {" "}
         <Routes>
           {/* Public Routes */}
-          <Route exact path="/" element={<Screen3 />} />
+          <Route exact path="/screen3" element={<Screen3 />} />
           <Route exact path="/screen3" element={<Screen3 />} />
           <Route exact path="/screen2" element={<Screen2 />} />
           <Route exact path="/screen1" element={<Screen1 />} />
-          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/" element={<Login />} />
 
           <Route element={<PrivateRoute />}>
             <Route exact path="/" element={<Screen3 />} />

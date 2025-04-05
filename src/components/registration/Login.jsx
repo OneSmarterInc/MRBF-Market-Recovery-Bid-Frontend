@@ -31,7 +31,7 @@ const Login = () => {
       localStorage.setItem("token", token);
       localStorage.setItem("user", JSON.stringify(user));
 
-      navigate("/");
+      navigate("/screen1");
     } catch (err) {
       console.error(err);
       setError("Login failed. Please check your credentials.");

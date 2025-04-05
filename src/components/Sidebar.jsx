@@ -1,10 +1,11 @@
 import React from "react";
 import Logo from "../assets/image 2.png";
 import sidebar from "../assets/left.png";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   return (
     <div
       style={{ backgroundImage: `url(${sidebar})` }}
@@ -16,32 +17,52 @@ const Sidebar = () => {
 
       <nav className="flex flex-col space-y-2">
         <p
-          onClick={() => navigate("/screen3")}
-          className="bg-[#008CD0] text-white px-4 cursor-pointer py-2 rounded-e-full font-medium"
+          onClick={() => navigate("/screen1")}
+          className={` ${
+            location.pathname === "/screen1"
+              ? "bg-[#008CD0] text-white"
+              : "text-[#008CD0]"
+          }   px-4 cursor-pointer py-2 rounded-e-full font-medium`}
         >
           Sample Link 01
         </p>
         <p
           onClick={() => navigate("/screen2")}
-          className="text-[#008CD0] px-4 cursor-pointer py-2 hover:bg-white rounded-e-full"
+          className={` ${
+            location.pathname === "/screen2"
+              ? "bg-[#008CD0] text-white"
+              : "text-[#008CD0]"
+          }   px-4 cursor-pointer py-2 rounded-e-full font-medium`}
         >
           Sample Link 02
         </p>
         <p
-          onClick={() => navigate("/screen1")}
-          className="text-[#008CD0] px-4 cursor-pointer py-2 hover:bg-white rounded-e-full"
+          onClick={() => navigate("/screen3")}
+          className={` ${
+            location.pathname === "/screen3"
+              ? "bg-[#008CD0] text-white"
+              : "text-[#008CD0]"
+          }   px-4 cursor-pointer py-2 rounded-e-full font-medium`}
         >
           Sample Link 03
         </p>
         <p
           onClick={() => navigate("/")}
-          className="text-[#008CD0] px-4 cursor-pointer py-2 hover:bg-white rounded-e-full"
+          className={` ${
+            location.pathname === "/screen4"
+              ? "bg-[#008CD0] text-white"
+              : "text-[#008CD0]"
+          }   px-4 cursor-pointer py-2 rounded-e-full font-medium`}
         >
           Sample Link 04
         </p>
         <p
           onClick={() => navigate("/")}
-          className="text-[#008CD0] px-4 cursor-pointer py-2 hover:bg-white rounded-e-full"
+          className={` ${
+            location.pathname === "/screen5"
+              ? "bg-[#008CD0] text-white"
+              : "text-[#008CD0]"
+          }   px-4 cursor-pointer py-2 rounded-e-full font-medium`}
         >
           Sample Link 05
         </p>

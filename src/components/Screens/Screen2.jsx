@@ -9,8 +9,10 @@ import {
 import selectbtn from "../../assets/select.png";
 import arrow from "../../assets/arrow.png";
 import img1 from "../../assets/img1.png";
+import { useNavigate } from "react-router-dom";
 
 const Screen2 = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex h-screen bg-[#F8FCFF]">
       <Sidebar />
@@ -154,7 +156,12 @@ const Screen2 = () => {
             </button> */}
 
             <div className="mt-10 w-full flex justify-end">
-              <img src={selectbtn} alt="Logo" className="w-28 h-8" />
+              <img
+                onClick={() => navigate("/screen3")}
+                src={selectbtn}
+                alt="Logo"
+                className="w-28 h-8 cursor-pointer"
+              />
             </div>
           </div>
 

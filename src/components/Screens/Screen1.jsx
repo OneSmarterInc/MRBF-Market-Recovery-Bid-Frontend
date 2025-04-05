@@ -9,8 +9,10 @@ import {
 import selectbtn from "../../assets/select.png";
 import arrow from "../../assets/arrow.png";
 import img1 from "../../assets/img1.png";
+import { useNavigate } from "react-router-dom";
 
 const Screen1 = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex h-screen bg-[#F8FCFF]">
       <Sidebar />
@@ -56,7 +58,8 @@ const Screen1 = () => {
                   {[...Array(4)].map((_, index) => (
                     <tr
                       key={index}
-                      className="text-start border border-gray-200"
+                      onClick={() => navigate("/screen2")}
+                      className="text-start border border-gray-200 cursor-pointer hover:bg-gray-100"
                     >
                       <td className="border border-gray-200  px-4 py-2">11</td>
                       <td className="border border-gray-200  px-4 py-2">

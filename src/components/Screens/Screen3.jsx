@@ -1,12 +1,18 @@
 import React from "react";
 import Sidebar from "../Sidebar";
 import Navbar from "../Navbar";
-import { FaArrowLeft, FaExternalLinkAlt, FaRegCheckCircle } from "react-icons/fa";
+import {
+  FaArrowLeft,
+  FaExternalLinkAlt,
+  FaRegCheckCircle,
+} from "react-icons/fa";
 import backbtn from "../../assets/backbutton.png";
 import arrow from "../../assets/arrow.png";
 import img1 from "../../assets/img1.png";
+import { useNavigate } from "react-router-dom";
 
 const Screen3 = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex h-screen bg-[#F8FCFF]">
       <Sidebar />
@@ -75,7 +81,12 @@ const Screen3 = () => {
             </button> */}
 
             <div className="mt-10">
-              <img src={backbtn} alt="Logo" className="w-28 h-7" />
+              <img
+                onClick={() => navigate("/screen2")}
+                src={backbtn}
+                alt="Logo"
+                className="w-28 h-7 cursor-pointer"
+              />
             </div>
 
             <div className="mt-6 flex gap-10 text-gray-600 text-sm">

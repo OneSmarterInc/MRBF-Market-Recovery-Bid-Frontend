@@ -5,8 +5,6 @@ import {
   Route,
   HashRouter,
 } from "react-router-dom";
-
-import Signup from "./components/registration/signup";
 import MyProvider from "./ContextApi/MyProvider";
 import PrivateRoute from "./Routes/PrivateRoute";
 import Screen1 from "./components/Screens/Screen1";

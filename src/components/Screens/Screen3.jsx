@@ -226,7 +226,7 @@ const Screen3 = () => {
               <div className="">
                 {" "}
                 <img
-                  onClick={() => navigate("/screen1")}
+                  onClick={() => navigate("/screen2")}
                   src={backbtn}
                   alt="Logo"
                   className="w-28 h-7 cursor-pointer"

@@ -20,6 +20,17 @@ const Screen3 = () => {
   const [remarks, setremarks] = useState(
     "Lorem ipsum dolor, sit amet consectetur adipisicing elit  Velit, enim dolore quasi eum cum ex numquam rem suscipit arum laudantium eos distinctio voluptatem quod rerum vel illum tenetur quo libero?"
   );
+
+  const saveToLocalStorage = () => {
+    // localStorage.setItem("bidFormData", JSON.stringify(bidData));
+    alert("Data saved successfully!");
+  };
+
+  const resetForm = () => {
+    // setBidData(initialBidData);
+    // localStorage.removeItem("bidFormData");
+    alert("Form reset to initial values!");
+  };
   return (
     <div className="flex h-screen bg-[#F8FCFF]">
       <Sidebar />
@@ -28,9 +39,9 @@ const Screen3 = () => {
         <Navbar />
 
         {/* Content */}
-        <div className="p-6 px-10 md:pr-20">
-          <div className="bg-white p-6  rounded-lg">
-            <div className="grid grid-cols-2 gap-2">
+        <div className="p-3 md:p-6 md:px-10 md:pr-20">
+          <div className="bg-white md:p-6  rounded-lg mb-20">
+            <div className="grid md:grid-cols-2 gap-2">
               <div className="grid md:grid-cols-2 gap-6 ">
                 <div>
                   <h2 className="font-semibold text-gray-700">
@@ -61,7 +72,7 @@ const Screen3 = () => {
                 </div>
               </div>
 
-              <div className=" ">
+              <div className=" my-10 md:my-0 w-full ">
                 <p className="font-semibold text-gray-700">
                   BID NUMBER: <span className="text-[#008CD0]">0000011</span>
                 </p>
@@ -87,7 +98,7 @@ const Screen3 = () => {
               <FaArrowLeft className="mr-2" /> BACK
             </button> */}
 
-            <div className="mt-5 flex flex-wrap gap-10 text-gray-600 text-sm">
+            <div className="my-8 mt-10 grid w-full sm:grid-cols-3 lg:grid-cols-5 gap-10 text-gray-600 text-sm">
               <p className=" font-semibold flex gap-2">
                 <p className=" ">App Date:</p>
                 <p>
@@ -211,17 +222,34 @@ const Screen3 = () => {
                 </div>
               </div>
             </div>
-            <div className="my-5">
-              <img
-                onClick={() => navigate("/screen2")}
-                src={backbtn}
-                alt="Logo"
-                className="w-28 h-7 cursor-pointer"
-              />
+            <div className=" flex justify-between items-end mt-5 md:my-10">
+              <div className="">
+                {" "}
+                <img
+                  onClick={() => navigate("/screen1")}
+                  src={backbtn}
+                  alt="Logo"
+                  className="w-28 h-7 cursor-pointer"
+                />
+              </div>
+              <div className=" w-full flex gap-2 md:gap-5 justify-end items-end cursor-pointer">
+                <button
+                  onClick={saveToLocalStorage}
+                  className="p-2 py-0.5 hover:bg-[#008CBA] hover:text-gray-50 cursor-pointer w-24  text-[#008CBA]  border text-gray rounded-lg"
+                >
+                  Save
+                </button>
+                <button
+                  onClick={resetForm}
+                  className="bg-gray-500 hover:bg-red-600 text-white py-1 h-7 px-3 rounded text-sm cursor-pointer"
+                >
+                  Reset Form
+                </button>
+              </div>
             </div>
           </div>
 
-          <footer className="text-start bg-amber-50 p-3 fixed bottom-0 w-full border-t-2 border-blue-300 text-gray-500 text-sm ">
+          <footer className="text-start bg-white p-3 fixed bottom-0 w-full border-t-2 border-blue-300 text-gray-500 text-sm ">
             &copy; 2025{" "}
             <span className="font-medium">
               Market Recovery Bid Maintenance.

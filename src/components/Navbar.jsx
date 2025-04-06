@@ -11,13 +11,12 @@ const Navbar = () => {
       <div>
         {" "}
         <h2 className=" text-2xl text-[#008CBA]  font-semibold">
-          {(location.pathname === "/screen2" ||
-            location.pathname === "/screen3") &&
+          {location.pathname === "/screen2" &&
             "Market Recovery Bid Update Menu"}
-          {
-            (location.pathname =
-              "/screen1" && "Market Recovery Bid Maintainence")
-          }
+          {location.pathname === "/screen3" &&
+            "Market Recovery Bid Update Menu"}
+          {location.pathname === "/screen1" &&
+            "Market Recovery Bid Maintainence"}
         </h2>
         <div className="bg-[#008CBA] h-0.5 mt-4 w-20"></div>
       </div>

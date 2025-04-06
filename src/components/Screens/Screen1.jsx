@@ -108,7 +108,7 @@ const Screen1 = () => {
                   <h3 className="text-[#008CBA] mb-2 text-sm">
                     Add New Record
                   </h3>
-                  <div className="grid grid-cols-3 md:grid-cols-6 gap-2">
+                  <div className="grid sm:grid-cols-3 md:grid-cols-6 gap-2">
                     <input
                       type="text"
                       name="bidNo"
@@ -219,7 +219,7 @@ const Screen1 = () => {
             </div> */}
           </main>
 
-          <footer className="text-start bg-amber-50 p-3 fixed bottom-0 w-full border-t-2 border-blue-300 text-gray-500 text-sm ">
+          <footer className="text-start bg-white p-3 fixed bottom-0 w-full border-t-2 border-blue-300 text-gray-500 text-sm ">
             &copy; 2025{" "}
             <span className="font-medium">
               Market Recovery Bid Maintenance.

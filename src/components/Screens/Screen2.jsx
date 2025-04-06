@@ -4,6 +4,7 @@ import Navbar from "../Navbar";
 import selectbtn from "../../assets/next.png";
 import arrow from "../../assets/arrow.png";
 import { useNavigate } from "react-router-dom";
+import backbtn from "../../assets/backbutton.png";
 
 const Screen2 = () => {
   const navigate = useNavigate();
@@ -101,11 +102,6 @@ const Screen2 = () => {
     }));
   };
 
-  const handleSubmit = () => {
-    console.log("Form submitted:", bidData);
-    navigate("/screen3");
-  };
-
   return (
     <div className="flex h-screen bg-[#F8FCFF]">
       <Sidebar />
@@ -114,10 +110,10 @@ const Screen2 = () => {
         <Navbar />
 
         {/* Content */}
-        <div className="p-6 px-10 pr-20">
-          <div className="bg-white p-6 pt-0 rounded-lg">
+        <div className="md:p-6 px-10 md:pr-20">
+          <div className="bg-white md:p-6 pt-0 rounded-lg">
             <div className="pt-4">
-              <p className="font-semibold text-gray-700 text-center">
+              <p className="font-semibold text-gray-700 text-center mb-6">
                 BID NUMBER:{" "}
                 <span className="text-[#008CD0]">{bidData.bidNumber}</span>
               </p>
@@ -190,7 +186,7 @@ const Screen2 = () => {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 place-content-between gap-10 mt-5">
+            <div className="grid md:grid-cols-2 place-content-between gap-10 mt-8">
               <div>
                 <h2 className="font-semibold text-gray-700">Company Info</h2>
                 <div className="mt-1">
@@ -367,31 +363,41 @@ const Screen2 = () => {
                 </div>
               </div>
             </div>
+            <div className=" flex flex-col md:flex-row justify-end md:justify-between items-end mt-5 my-10 pb-10">
+              <div className="">
+                {" "}
+                <img
+                  onClick={() => navigate("/screen1")}
+                  src={backbtn}
+                  alt="Logo"
+                  className="w-28 h-7 cursor-pointer"
+                />
+              </div>
+              <div className=" w-full flex gap-2 md:gap-5 justify-end items-end cursor-pointer">
+                <button
+                  onClick={saveToLocalStorage}
+                  className="p-2 py-0.5 hover:bg-[#008CBA] hover:text-gray-50 cursor-pointer w-24  text-[#008CBA]  border text-gray rounded-lg"
+                >
+                  Save
+                </button>
+                <button
+                  onClick={resetForm}
+                  className="bg-gray-500 hover:bg-red-600 text-white py-1 h-7 px-3 rounded text-sm cursor-pointer"
+                >
+                  Reset Form
+                </button>
 
-            <div className="my-10 mt-5 w-full flex gap-5 justify-end items-end cursor-pointer">
-              <button
-                onClick={saveToLocalStorage}
-                className="p-2 py-0.5 hover:bg-[#008CBA] hover:text-gray-50 cursor-pointer w-24  text-[#008CBA]  border text-gray rounded-lg"
-              >
-                Save Draft
-              </button>
-              <button
-                onClick={resetForm}
-                className="bg-gray-500 hover:bg-red-600 text-white py-1 h-7 px-3 rounded text-sm cursor-pointer"
-              >
-                Reset Form
-              </button>
-
-              <img
-                onClick={handleSubmit}
-                src={selectbtn}
-                alt="Submit"
-                className="w-28 h-8 cursor-pointer"
-              />
+                <img
+                  onClick={() => navigate("/screen3")}
+                  src={selectbtn}
+                  alt="Submit"
+                  className="w-28 h-8 cursor-pointer"
+                />
+              </div>
             </div>
           </div>
 
-          <footer className="text-start bg-amber-50 p-3 fixed bottom-0 w-full border-t-2 border-blue-300 text-gray-500 text-sm">
+          <footer className="text-start bg-white p-3 fixed bottom-0 w-full border-t-2 border-blue-300 text-gray-500 text-sm">
             &copy; 2025{" "}
             <span className="font-medium">
               Market Recovery Bid Maintenance.

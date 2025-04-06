@@ -28,10 +28,10 @@ const Screen3 = () => {
         <Navbar />
 
         {/* Content */}
-        <div className="p-6 px-10 pr-20">
+        <div className="p-6 px-10 md:pr-20">
           <div className="bg-white p-6  rounded-lg">
             <div className="grid grid-cols-2 gap-2">
-              <div className="grid grid-cols-2 gap-6 ">
+              <div className="grid md:grid-cols-2 gap-6 ">
                 <div>
                   <h2 className="font-semibold text-gray-700">
                     Company Overview
@@ -65,7 +65,7 @@ const Screen3 = () => {
                 <p className="font-semibold text-gray-700">
                   BID NUMBER: <span className="text-[#008CD0]">0000011</span>
                 </p>
-                <div className="grid grid-cols-4 gap-4 text-gray-600 mt-2">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-gray-600 mt-2">
                   <p>
                     Employer <p className="text-[#008CD0] font-medium">8137</p>
                   </p>
@@ -87,40 +87,55 @@ const Screen3 = () => {
               <FaArrowLeft className="mr-2" /> BACK
             </button> */}
 
-            <div className="mt-5 flex gap-10 text-gray-600 text-sm">
-              <p className=" font-semibold">
-                App Date: 07/13/2023{" "}
-                <p className="text-[#008CD0] text-xs text-end pl-10 font-light">
-                  MM/DD/YYYY
+            <div className="mt-5 flex flex-wrap gap-10 text-gray-600 text-sm">
+              <p className=" font-semibold flex gap-2">
+                <p className=" ">App Date:</p>
+                <p>
+                  <p className="text-end">08/04/2023</p>
+                  <p className="text-[#008CD0] text-xs text-end  font-light">
+                    MM/DD/YYYY
+                  </p>
                 </p>
               </p>
-              <p className=" font-semibold">
-                <span className=" text-red-500">Bid Date:</span> 08/04/2023{" "}
-                <p className="text-[#008CD0] text-xs text-end pl-10 font-light">
-                  MM/DD/YYYY
+              <p className=" font-semibold flex gap-2">
+                <p className=" text-red-500">Bid Date:</p>
+                <p>
+                  <p className="text-end">08/04/2023</p>
+                  <p className="text-[#008CD0] text-xs text-end  font-light">
+                    MM/DD/YYYY
+                  </p>
                 </p>
               </p>
-              <p className=" font-semibold">
-                Agreement Date: 08/04/2023{" "}
-                <p className="text-[#008CD0] text-xs text-end pl-10 font-light">
-                  MM/DD/YYYY
+              <p className=" font-semibold flex gap-2">
+                <p className=" ">Agreement Date:</p>
+                <p>
+                  <p className="text-end">08/04/2023</p>
+                  <p className="text-[#008CD0] text-xs text-end  font-light">
+                    MM/DD/YYYY
+                  </p>
                 </p>
               </p>
-              <p className=" font-semibold">
-                Response Date: 08/04/2023{" "}
-                <p className="text-[#008CD0] text-xs text-end pl-10 font-light">
-                  MM/DD/YYYY
+              <p className=" font-semibold flex gap-2">
+                <p className=" ">Response Date:</p>
+                <p>
+                  <p className="text-end">08/04/2023</p>
+                  <p className="text-[#008CD0] text-xs text-end  font-light">
+                    MM/DD/YYYY
+                  </p>
                 </p>
               </p>
-              <p className=" font-semibold">
-                Exp Date: 10/13/2023{" "}
-                <p className="text-[#008CD0] text-xs text-end pl-10 font-light">
-                  MM/DD/YYYY
+              <p className=" font-semibold flex gap-2">
+                <p className=" ">Exp Date:</p>
+                <p>
+                  <p className="text-end">08/04/2023</p>
+                  <p className="text-[#008CD0] text-xs text-end  font-light">
+                    MM/DD/YYYY
+                  </p>
                 </p>
               </p>
             </div>
 
-            <div className="flex w-full">
+            <div className="md:flex w-full">
               <div className="w-96">
                 <div className="mt-4 flex items-center text-green-600 font-medium text-lg">
                   <FaRegCheckCircle className="text-2xl" />
@@ -149,7 +164,7 @@ const Screen3 = () => {
                       <select
                         id="reductionAmount"
                         name="reductionAmount"
-                        className="appearance-none w-full border border-gray-300 rounded-lg py-1 pl-3 pr-8 text-xs focus:ring-2 focus:ring-blue-400"
+                        className="appearance-none w-16 border border-gray-300 rounded-lg py-1 pl-3 pr-8 text-xs focus:ring-2 focus:ring-blue-400"
                         defaultValue="0"
                       >
                         {reductionOptions.map((value) => (
@@ -196,7 +211,7 @@ const Screen3 = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-5">
+            <div className="my-5">
               <img
                 onClick={() => navigate("/screen2")}
                 src={backbtn}
@@ -206,7 +221,7 @@ const Screen3 = () => {
             </div>
           </div>
 
-          <footer className="text-start p-3 fixed bottom-0 w-full border-t-2 border-blue-300 text-gray-500 text-sm ">
+          <footer className="text-start bg-amber-50 p-3 fixed bottom-0 w-full border-t-2 border-blue-300 text-gray-500 text-sm ">
             &copy; 2025{" "}
             <span className="font-medium">
               Market Recovery Bid Maintenance.

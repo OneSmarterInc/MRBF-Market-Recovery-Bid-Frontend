@@ -121,7 +121,7 @@ const Screen2 = () => {
                 BID NUMBER:{" "}
                 <span className="text-[#008CD0]">{bidData.bidNumber}</span>
               </p>
-              <div className="grid grid-cols-6 gap-4 text-gray-600 mt-2">
+              <div className="grid md:grid-cols-6 gap-4 text-gray-600 mt-2">
                 <div>
                   Employer{" "}
                   <p className="text-[#008CD0] font-medium">
@@ -190,7 +190,7 @@ const Screen2 = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 place-content-between gap-10 mt-5">
+            <div className="grid md:grid-cols-2 place-content-between gap-10 mt-5">
               <div>
                 <h2 className="font-semibold text-gray-700">Company Info</h2>
                 <div className="mt-1">
@@ -368,7 +368,7 @@ const Screen2 = () => {
               </div>
             </div>
 
-            <div className="mt-10 w-full flex gap-5 justify-end items-end cursor-pointer">
+            <div className="my-10 mt-5 w-full flex gap-5 justify-end items-end cursor-pointer">
               <button
                 onClick={saveToLocalStorage}
                 className="p-2 py-0.5 hover:bg-[#008CBA] hover:text-gray-50 cursor-pointer w-24  text-[#008CBA]  border text-gray rounded-lg"
@@ -391,7 +391,7 @@ const Screen2 = () => {
             </div>
           </div>
 
-          <footer className="text-start p-3 fixed bottom-0 w-full border-t-2 border-blue-300 text-gray-500 text-sm">
+          <footer className="text-start bg-amber-50 p-3 fixed bottom-0 w-full border-t-2 border-blue-300 text-gray-500 text-sm">
             &copy; 2025{" "}
             <span className="font-medium">
               Market Recovery Bid Maintenance.

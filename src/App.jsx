@@ -25,6 +25,7 @@ const App = () => {
           <Route exact path="/screen2" element={<Screen2 />} />
           <Route exact path="/screen1" element={<Screen1 />} />
           <Route exact path="/" element={<Login />} />
+          <Route exact path="/login" element={<Login />} />
 
           <Route element={<PrivateRoute />}>
             <Route exact path="/" element={<Screen3 />} />

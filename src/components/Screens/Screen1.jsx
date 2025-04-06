@@ -72,9 +72,9 @@ const Screen1 = () => {
       <div className="flex flex-col flex-1">
         <Navbar />
 
-        <div className="p-6 px-10 pr-20">
-          <main className="flex-1 p-6 pt-0 bg-white ">
-            <div className="mt-4 flex items-end gap-10 ">
+        <div className="p-6 md:px-10 md:pr-20">
+          <main className="flex-1 py-6 md:p-6 pt-0 bg-white ">
+            <div className="mt-4 flex flex-col md:flex-row items-center md:items-end  gap-3 md:gap-10 ">
               <div className="text-gray-700  gap-4">
                 <p className="font-semibold my-0.5 text-sm">Employer</p>
                 <input
@@ -108,7 +108,7 @@ const Screen1 = () => {
                   <h3 className="text-[#008CBA] mb-2 text-sm">
                     Add New Record
                   </h3>
-                  <div className="grid grid-cols-6 gap-2">
+                  <div className="grid grid-cols-3 md:grid-cols-6 gap-2">
                     <input
                       type="text"
                       name="bidNo"
@@ -159,8 +159,8 @@ const Screen1 = () => {
                 </div>
 
                 {/* Table */}
-                <div className="overflow-x-auto">
-                  <table className="w-full border-collapse border border-gray-200">
+                <div className="overflow-x-scroll w-full">
+                  <table className="w-full  table-auto border-collapse border border-gray-200">
                     <thead>
                       <tr className="text-[#008CBA] text-start">
                         <th className="border border-gray-200 px-4 py-2 text-start">
@@ -219,7 +219,7 @@ const Screen1 = () => {
             </div> */}
           </main>
 
-          <footer className="text-start p-3 fixed bottom-0 w-full border-t-2 border-blue-300 text-gray-500 text-sm ">
+          <footer className="text-start bg-amber-50 p-3 fixed bottom-0 w-full border-t-2 border-blue-300 text-gray-500 text-sm ">
             &copy; 2025{" "}
             <span className="font-medium">
               Market Recovery Bid Maintenance.

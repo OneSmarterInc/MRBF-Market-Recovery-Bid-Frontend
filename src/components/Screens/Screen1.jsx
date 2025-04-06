@@ -160,52 +160,54 @@ const Screen1 = () => {
 
                 {/* Table */}
                 <div className="overflow-x-scroll w-full">
-                  <table className="w-full  table-auto border-collapse border border-gray-200">
-                    <thead>
-                      <tr className="text-[#008CBA] text-start">
-                        <th className="border border-gray-200 px-4 py-2 text-start">
-                          Bid No.
-                        </th>
-                        <th className="border border-gray-200 px-4 py-2  text-start">
-                          Employer
-                        </th>
-                        <th className="border border-gray-200 px-4 py-2 text-start">
-                          Project Name
-                        </th>
-                        <th className="border border-gray-200 px-4 py-2 text-start">
-                          Approved Amount
-                        </th>
-                        <th className="border border-gray-200 px-4 py-2 text-start">
-                          Estimated Hours
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {tableData.map((row, index) => (
-                        <tr
-                          key={index}
-                          onClick={() => navigate("/screen2")}
-                          className="text-start border border-gray-200 cursor-pointer hover:bg-gray-100"
-                        >
-                          <td className="border border-gray-200 px-4 py-2">
-                            {row.bidNo}
-                          </td>
-                          <td className="border border-gray-200 px-4 py-2">
-                            {row.employer}
-                          </td>
-                          <td className="border border-gray-200 px-4 py-2">
-                            {row.projectName}
-                          </td>
-                          <td className="border border-gray-200 px-4 py-2">
-                            {row.approvedAmount}
-                          </td>
-                          <td className="border border-gray-200 px-4 py-2">
-                            {row.estimatedHours}
-                          </td>
+                  <div className=" w-60 mb-10 sm:w-full">
+                    <table className="w-full  table-auto border-collapse border border-gray-200">
+                      <thead>
+                        <tr className="text-[#008CBA] text-start">
+                          <th className="border border-gray-200 px-4 py-2 text-start">
+                            Bid No.
+                          </th>
+                          <th className="border border-gray-200 px-4 py-2  text-start">
+                            Employer
+                          </th>
+                          <th className="border border-gray-200 px-4 py-2 text-start">
+                            Project Name
+                          </th>
+                          <th className="border border-gray-200 px-4 py-2 text-start">
+                            Approved Amount
+                          </th>
+                          <th className="border border-gray-200 px-4 py-2 text-start">
+                            Estimated Hours
+                          </th>
                         </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                      </thead>
+                      <tbody>
+                        {tableData.map((row, index) => (
+                          <tr
+                            key={index}
+                            onClick={() => navigate("/screen2")}
+                            className="text-start border border-gray-200 cursor-pointer hover:bg-gray-100"
+                          >
+                            <td className="border border-gray-200 px-4 py-2">
+                              {row.bidNo}
+                            </td>
+                            <td className="border border-gray-200 px-4 py-2">
+                              {row.employer}
+                            </td>
+                            <td className="border border-gray-200 px-4 py-2">
+                              {row.projectName}
+                            </td>
+                            <td className="border border-gray-200 px-4 py-2">
+                              {row.approvedAmount}
+                            </td>
+                            <td className="border border-gray-200 px-4 py-2">
+                              {row.estimatedHours}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             ) : (
